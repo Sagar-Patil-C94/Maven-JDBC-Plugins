@@ -7,7 +7,8 @@ public class InsertData {
     public static int insert(Connection connection, String tableName, String columnsList, String values) {
         try {
             Statement statement = connection.createStatement();
-            statement.execute("INSERT INTO " + tableName + columnsList + " VALUES" + values);
+            statement.execute(StringConstants.insertInto + tableName + columnsList + StringConstants.values +
+                    values);
             return statement.getUpdateCount();
         } catch (Exception e) {
             System.out.println(e.getLocalizedMessage());
