@@ -7,4 +7,9 @@ public class StringConstants {
     public  static final String forwardSlash  = "/";
     public  static final String deletePrefix  = "DELETE FROM ";
     public  static final String whereClause  = " WHERE ";
+    public  static final String createTablePrefix  = "CREATE TABLE IF NOT EXISTS ";
+    public  static final String openBraces = "(";
+    public  static final String closeBraces = ")";
+
+
 }

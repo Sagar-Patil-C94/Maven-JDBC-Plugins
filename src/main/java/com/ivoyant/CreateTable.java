@@ -6,11 +6,12 @@ import java.sql.Statement;
 public class CreateTable {
     static int create(Connection connection, String tableName, String columnNames) {
         try (Statement statement = connection.createStatement()) {
-            statement.execute("CREATE TABLE IF NOT EXISTS " + tableName + "(" + columnNames + ")");
+            statement.execute(StringConstants.createTablePrefix + tableName + StringConstants.openBraces
+                    + columnNames + StringConstants.closeBraces);
             return statement.getUpdateCount();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return -1;
         }
-        return -1;
     }
 }
