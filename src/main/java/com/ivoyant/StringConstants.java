@@ -12,6 +12,7 @@ public class StringConstants {
     public static final String closeBraces = ")";
     public static final String selectPrefix = "SELECT ";
     public static final String fromClause = " FROM ";
+    public static final String dropTablePrefix = "DROP TABLE ";
 
 
 }
