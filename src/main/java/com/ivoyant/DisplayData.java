@@ -8,7 +8,7 @@ public class DisplayData {
     public static ResultSet display(Connection connection, String columnNames, String tableName) {
         try {
             Statement statement = connection.createStatement();
-            statement.execute("SELECT " + columnNames + " FROM " + tableName);
+            statement.execute(StringConstants.selectPrefix + columnNames + StringConstants.fromClause + tableName);
             return statement.getResultSet();
         } catch (Exception e) {
             System.out.println(e.getLocalizedMessage());
