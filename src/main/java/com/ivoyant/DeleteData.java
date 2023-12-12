@@ -4,10 +4,10 @@ import java.sql.Connection;
 import java.sql.Statement;
 
 public class DeleteData {
-    public static int delete(Connection connection, String tabelName) {
+    public static int delete(Connection connection, String tableName) {
         try {
             Statement statement = connection.createStatement();
-            statement.execute("DELETE FROM " + tabelName);
+            statement.execute(StringConstants.deletePrefix + tableName);
             return statement.getUpdateCount();
         } catch (Exception e) {
             System.out.println(e.getLocalizedMessage());
@@ -15,10 +15,10 @@ public class DeleteData {
         }
     }
 
-    public static int delete(Connection connection, String tabelName, String condition) {
+    public static int delete(Connection connection, String tableName, String condition) {
         try {
             Statement statement = connection.createStatement();
-            statement.execute("DELETE FROM " + tabelName + " WHERE " + condition);
+            statement.execute(StringConstants.deletePrefix + tableName + StringConstants.whereClause + condition);
             return statement.getUpdateCount();
         } catch (Exception e) {
             System.out.println(e.getLocalizedMessage());
