@@ -1,8 +1,10 @@
-package com.ivoyant;
+package com.ivoyant.mysql;
 
 public class StringConstants {
-    public static final String driverName = "com.mysql.cj.jdbc.Driver";
-    public static final String urlPrefix = "jdbc:mysql://";
+    public static final String sqlDriverName = "com.mysql.cj.jdbc.Driver";
+    public static final String postgresDriverName = "org.postgresql.Driver";
+    public static final String sqlUrlPrefix = "jdbc:mysql://";
+    public static final String postgresqlUrlPrefix = "jdbc:postgresql://";
     public static final String colon = ":";
     public static final String forwardSlash = "/";
     public static final String deletePrefix = "DELETE FROM ";
@@ -16,6 +18,11 @@ public class StringConstants {
     public static final String showTable = "SHOW TABLES";
     public static final String insertInto = "INSERT INTO ";
     public static final String values = " VALUES";
-
+    public static final String mysql = "mysql";
+    public static final String semiColon = ";";
+    public static final String postgresqlShowTables = "SELECT * FROM pg_catalog.pg_tables  \n" +
+            "WHERE  \n" +
+            "schemaname != 'pg_catalog'  \n" +
+            "AND schemaname != 'information_schema';  ";
 
 }
